@@ -1,0 +1,210 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title id="p1">Ruletka</title>
+        <!-- <link rel="shortcut icon" href="images/ekipa.ico" /> -->
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <header>
+      <div class="page-start">Loading...</div>
+      <div class="navbar">
+        <div class="name" >Adiroll</div>
+        <div class="games">
+          <a href="index.html" class="crash nav-game">CRASH</a>
+          <a href="index.html" class="ruletka nav-game">RULETKA</a>
+          <a href="index.html" class="coinflip nav-game">COINFLIP</a>
+        </div>
+        <div class="nav-login">
+          zaloguj sie
+        </div>
+
+
+      </div>
+
+    </header>
+
+    <body>
+
+
+
+      <div class="sidebar">
+
+        <div class ="sidebar-item">
+          <div class = "item-icon"><img src = icons\user.png></div>
+          <div class = "item-name">Profil</div>
+        </div>
+
+        <div class ="sidebar-item">
+          <div class = "item-icon"><img src = icons\gear.png></div>
+          <div class = "item-name">Ustawienia</div>
+        </div>
+
+        <div class ="sidebar-item">
+          <div class = "item-icon"><img src = icons\stats.png></div>
+          <div class = "item-name">Statystyki</div>
+        </div>
+
+        <div class ="sidebar-item">
+          <div class = "item-icon"><img src = icons\logout.png></div>
+          <div class = "item-name">Wyloguj</div>
+        </div>
+
+      </div>
+
+      <div class = "chat-bar">
+
+        <div class = "chat-content">
+
+          <!-- <img src="icons/mati.png"> -->
+        </div>
+
+
+        <div class ="chat-nav">
+
+        </div>
+
+      </div>
+
+      <div class="main-container">
+        <div class="last-wins">
+        </div>
+
+
+        <div class="game">
+          
+          <div class="game-center">
+
+            <div class="game-show"> 
+              <button id="spin" onclick="spin()">Spin</button>
+              <span class="arrow2"></span>
+              <!-- <span class="arrow"></span> -->
+              <div class="game-cointainer">
+                <div class="one">1</div>   
+                <div class="two parzyste">2</div>
+                <div class="three">3</div>
+                <div class="four parzyste">4</div>
+                <div class="five">5</div>
+                <div class="six parzyste">6</div>
+                <div class="seven">7</div>
+                <div class="eight parzyste">8</div>
+                <div class="nine">9</div>
+                <div class="ten parzyste">10</div>
+                <div class="eleven">11</div>
+                <div class="twelve parzyste">12</div>
+                <div class="thirteen">13</div>
+                <div class="fourteen parzyste">14</div>
+                <div class="fifteen parzyste">0</div>
+            </div>
+          </div>
+          <div class="game-right">
+      
+            <div class="winner" id="winner">Wygrany</div>
+            <div class="bet-center">
+              <button class="10 change-box">+10</button>
+              <button class="50 change-box">+50</button>
+              <button class="100 change-box">+100</button>
+              <button class="1000 change-box">+1000</button>
+              <button class="-10 change-box">-10</button>
+              <button class="-50 change-box">-50</button>
+              <button class="-100 change-box">-100</button>
+              <button class="-1000 change-box">-1000</button>
+              <br>
+              <input type ="number" min="0" max="100000" id="display" value="0" step=10 class = "ammount-input">
+              <div class="balance" id="balance" type="number">1000</div>
+
+
+
+            </div>
+
+         </div>
+        </div>
+          <!-- <div class="bet-setup">
+            <div class="bet-ammount bet-setup-kids">
+              <div class=""></div>
+
+
+            </div>
+            <div class="bet-control bet-setup-kids">
+              <div class="bet-control-button"></div>
+              <div class="bet-control-button"></div>
+              <div class="bet-control-button"></div>
+              <div class="bet-control-button"></div>
+              <div class="bet-control-button"></div>
+              <div class="bet-control-button"></div>
+              <div class="bet-control-button"></div>
+              <div class="bet-control-button"></div>
+
+
+
+            </div>
+
+            <div class="bet-history bet-setup-kids"></div>
+          </div> -->
+          <div class="bets">
+            <div class="bet-red bet-color">
+              <div class="bet-red-top bet-color-top">
+                <div class="set-text" id="bet-Red">Postaw zakład</div>
+                <div class="confirm-button confirm-button-red">
+                  <div class=" flip-card-inner">
+
+                    <div class="front">
+                      <img src = icons\coin1.png>
+                    </div>
+
+                    <div class="back">
+                      <img src = icons\coin2.png>
+                    </div>
+      
+                  </div>
+                </div>
+              </div>
+              <div class="bet-color-top">e</div>
+            </div>
+            <div class="bet-green bet-color">
+              <div class="bet-green-top bet-color-top">
+                <div class="set-text" id="bet-Green">Postaw zakład</div>
+                <div class="confirm-button confirm-button-green">
+                  <div class=" flip-card-inner">
+
+                    <div class="front">
+                      <img src = icons\coin1.png>
+                    </div>
+
+                    <div class="back">
+                      <img src = icons\coin2.png>
+                    </div>
+      
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bet-black bet-color">
+              <div class="bet-black-top bet-color-top">
+                <div class="set-text" id="bet-Black">Postaw zakład</div>
+                <div class="confirm-button confirm-button-Black">
+                  <div class=" flip-card-inner">
+
+                    <div class="front">
+                      <img src = icons\coin1.png>
+                    </div>
+
+                    <div class="back">
+                      <img src = icons\coin2.png>
+                    </div>
+      
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+      <script src ="main.js"></script>
+
+</html>
