@@ -21,11 +21,12 @@ body{
 header{
   font-family: fantasy;
 }
+
 .page-start{
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 4;
+  z-index: 10;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -123,7 +124,24 @@ header{
   float: right;
   width: 25rem;
   /* background-color: rgb(30, 26, 171); */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  width: 10rem;
+  transition: 100ms;
+  z-index: 3;
+  background-color: transparent;
+  color:  rgb(25, 128, 212);
 }
+.nav-login:hover{
+  cursor: pointer;
+  color:rgb(19, 16, 56);
+  background: linear-gradient(90deg,  rgb(3, 132, 212)0%, rgba(27,171,255,1) 100%);
+}
+
 .sidebar{
   animation-name: width-back;
   animation-duration: 500ms;
@@ -270,7 +288,7 @@ header{
   height: 150%;
   margin-left: 5rem;
   margin-right: 15rem;
-  padding-top: 6rem;
+  /* padding-top: 6rem; */
   background-color:rgb(29, 70, 77);
 }
 
@@ -476,7 +494,7 @@ header{
   transform: rotate(0deg);
 }
 .game-cointainer .two{
-  background-color:#121a85;
+  background-color:rgb(131, 29, 29);
   transform: rotate(24deg);
 }
 .game-cointainer .three{
@@ -484,7 +502,7 @@ header{
   transform: rotate(48deg);
 }
 .game-cointainer .four{
-  background-color: #121a85;;
+  background-color: rgb(131, 29, 29);
   transform: rotate(72deg);
   }
 .game-cointainer .five{
@@ -492,7 +510,7 @@ header{
   transform : rotate(96deg);
 }
 .game-cointainer .six{
-  background-color: #121a85;;
+  background-color: rgb(131, 29, 29);
   transform: rotate(120deg);
 }
 .game-cointainer .seven{
@@ -500,7 +518,7 @@ header{
   transform: rotate(144deg);
 }
 .game-cointainer .eight{
-  background-color: #121a85;;
+  background-color: rgb(131, 29, 29);
   transform: rotate(168deg);
 }
 .game-cointainer .nine{
@@ -508,7 +526,7 @@ header{
   transform: rotate(192deg);
 }
 .game-cointainer .ten{
-  background-color:#121a85;;
+  background-color:rgb(131, 29, 29);
   transform: rotate(216deg);
 }
 .game-cointainer .eleven{
@@ -516,7 +534,7 @@ header{
   transform: rotate(240deg);
 }
 .game-cointainer .twelve{
-  background-color: #121a85;;
+  background-color: rgb(131, 29, 29);
   transform: rotate(264deg);
 }
 .game-cointainer .thirteen{
@@ -524,7 +542,7 @@ header{
   transform: rotate(288deg);
 }
 .game-cointainer .fourteen{
-  background-color: #121a85;;
+  background-color: rgb(131, 29, 29);
   transform: rotate(312deg);
 }
 .game-cointainer .fifteen{
@@ -634,10 +652,11 @@ header{
 
 .bet-color-top{
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   width: 100%;
   height: 4rem;
-  background-color: thistle;
+  /* background-color: thistle; */
+
 }
 .bet-red-top{
   background-color: rgba(95, 11, 11, 0.4);
@@ -712,3 +731,225 @@ header{
 .confirm-button-black{
   background-color: #161616;
 }
+.betUserName{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.betUserAmmount{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.invisible{
+  visibility: hidden;
+}
+.beting{
+  padding-top: 1px;
+}
+.beting:hover{
+  filter: brightness(50%);
+  transition: 500ms;
+}
+#redBeted{
+  background-color: rgba(95, 11, 11, 0.4);
+  border-bottom: 8px solid #551e1e;
+}
+#blackBeted{
+  background-color: rgba(0, 0, 0, 0.4);
+  border-bottom: 8px solid #161616;
+}
+#greenBeted{
+  background-color: rgba(5, 29, 14, 0.4);
+  border-bottom: 8px solid #133313;
+}
+.secret{
+  height: 100px;
+  width: 100px;
+  background-color: transparent;
+  margin-left: 100px;
+  border: none;
+  /* background: none; */
+}
+.mn{
+  height: 200px;
+  width: 200px;
+  background-color: #074d22;
+  color: white;
+}
+.betAlert{
+  position: fixed;
+  bottom: 10px;
+  margin-left:73%;
+  height: 20px;
+  width: 400px;
+  color: rgb(255, 255, 255);
+  background-color: #8d1a1a;
+  z-index: 12;
+  justify-content: center;
+  padding: 10px 10px 10px 10px;
+}
+.betAlert:hover{
+  filter: brightness(50%);
+}
+.betAlert.show-in{
+  animation-name: show-betAlert;
+  animation-duration: 7s;
+  animation-fill-mode: ease-out;
+  animation-fill-mode: forwards;
+}
+/* tego nie potrzebuje chyba, chowanie alertu ale mam to zrobione w jednym  */
+.betAlert.show-out{
+  animation-name: hide-betAlert;
+  animation-duration: 7s;
+  animation-fill-mode: ease-out;
+  animation-fill-mode: forwards;
+}
+.timer{
+  position:fixed;
+  width: 100%;
+  height: 10%;
+  bottom: 0px;
+  left: 0px;
+  background-color: #4a0016;
+  animation-name: timer;
+  animation-duration: 7s;
+  animation-fill-mode: linear;
+}
+@keyframes timer{
+  100%{
+    width: 0%;
+  }
+  0%{
+    width: 100%;
+  }
+}
+
+@keyframes show-betAlert{
+  0%{
+    transform: translateX(200%);
+  }
+  5%{
+    transform: translateX(-10%);
+  }
+  10%{
+    transform: translateX(0%);
+  }
+  90%{
+    transform: translateX(0%);
+  }
+  95%{
+    transform: translateX(-10%);
+  }
+  100%{
+    transform: translateX(200%);
+  }
+}
+/* tez schowane bo zrobiłem w jednym keyframie */
+@keyframes hide-betAlert{
+  0%{
+    transform: translateX(0%);
+  }
+  40%{
+    transform: translateX(-10%);
+  }
+  100%{
+    transform: translateX(200%);
+  }
+}
+.pre-window{
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0, 0, 0, 0.7);
+
+  z-index: 11;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.login-window{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 400px;
+  width: 800px;
+  color: rgb(25, 128, 212);
+  background-color:rgb(13, 36, 61);
+  top: 10%;
+  z-index: 12;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px 10px 10px;
+  animation: 1s;
+}
+.login-title{
+  margin-top: -50px;
+  font-size: 4rem;
+}
+.nick-sumbit{
+  display: flex;
+  flex-direction: row;
+}
+.nick-input{
+  margin-top: 40px;
+  border-radius: 0.25em;
+  background-color: transparent;
+  color:  rgb(25, 128, 212);
+  border: rgb(25, 128, 212) 4px solid;
+  font-size: 20px;
+  /* text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.45em currentColor; */
+  box-shadow: 0 0 0.2em 0 rgb(25, 128, 212);
+  padding-left: 10px;
+}
+
+.nick-input:focus {
+  outline-style: none;
+}
+
+.sumbit-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: 80px;
+  height: 30px;
+  border-radius: 0.25em;
+  color:  rgb(25, 128, 212);
+  border: rgb(25, 128, 212) 1px solid;
+  font-size: 20px;
+  margin-left: 30px;
+}
+
+.sumbit-button:hover{
+  background-color: rgb(25, 128, 212);
+  color: rgb(13, 36, 61);
+  text-shadow: none;
+  cursor: pointer;
+}
+.login-esc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  color: rgb(13, 36, 61);
+  background-color:rgb(25, 128, 212); 
+  top: 0;
+  right: 0;
+  z-index: 13;
+  align-items: center;
+  justify-content: center;
+  animation: 1s;
+}
+.login-esc:hover{
+  cursor: pointer;
+  filter: opacity(0.7)
+}
+
